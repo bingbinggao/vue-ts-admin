@@ -1,6 +1,8 @@
 <template>
   <div class="app-main">
-    <router-view />
+    <div style="padding: 10px">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -15,5 +17,6 @@ export default class AppMain extends Vue {}
 .app-main {
   width: 100%;
   height: calc(100vh - 50px);
+  overflow: hidden;
 }
 </style>

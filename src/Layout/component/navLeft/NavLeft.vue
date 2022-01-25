@@ -1,11 +1,11 @@
 <template>
   <div class="app-left">
     <el-menu
-      default-active="0"
+      default-active="Dashboard"
       size="mini"
       class="el-menu-vertical-demo"
-      background-color="#1f1f1f"
-      text-color="#FFFFFF"
+      background-color="#486586"
+      text-color="#ffffff"
       :collapse="state.isSidebarNavCollapse"
     >
       <nav-menu :menuList="menuList" />
@@ -32,7 +32,8 @@ export default class NavLeft extends Vue {
 <style lang="scss" scoped>
 .app-left {
   height: 100vh;
-  background-color: #1f1f1f;
+  background-color: #486586;
+  overflow-y: auto;
 }
 </style>
 <style lang="scss">
@@ -41,9 +42,17 @@ export default class NavLeft extends Vue {
     width: 200px;
     min-height: 400px;
   }
-
   .el-menu {
     border-right: none;
+    .el-menu-item i {
+      color: #ffffff;
+    }
+    .el-submenu i {
+      color: #ffffff;
+    }
+    .el-menu-item.is-active i {
+      color: inherit;
+    }
   }
 }
 </style>
