@@ -6,7 +6,7 @@
       class="el-menu-vertical-demo"
       background-color="#486586"
       text-color="#ffffff"
-      :collapse="state.isSidebarNavCollapse"
+      :collapse="this.$store.state.isSidebarNavCollapse"
     >
       <nav-menu :menuList="menuList" />
     </el-menu>
@@ -23,8 +23,6 @@ import { RouteConfig } from "vue-router";
   components: { NavMenu },
 })
 export default class NavLeft extends Vue {
-  private state = this.$store.state;
-
   private menuList: Array<RouteConfig> = ROUTER_LIST;
 }
 </script>

@@ -14,6 +14,11 @@ const routes: Array<RouteConfig> = [
     redirect: "/dashboard",
     children: [...dynamicRoutes],
   },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("@/views/login/index.vue"),
+  },
 ];
 
 const router = new VueRouter({
@@ -23,6 +28,10 @@ const router = new VueRouter({
 
 router.beforeEach((to: Route, from: Route, next: any) => {
   NProgress.start();
+  console.log(sessionStorage.getItem("username"));
+  if (!window.sessionStorage.getItem("username") && to.path !== "/login") {
+    return next("/login");
+  }
   next();
 });
 
