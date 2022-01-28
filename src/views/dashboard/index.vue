@@ -42,7 +42,9 @@ import { Component, Vue } from "vue-property-decorator";
 import { EChartsOption } from "echarts/types/dist/echarts";
 import * as echarts from "echarts";
 
-@Component
+@Component({
+  name: "Dashboard",
+})
 export default class Dashboard extends Vue {
   private init(): void {
     this.drawPieContainer();

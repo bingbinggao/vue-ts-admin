@@ -32,7 +32,9 @@
 import { Component, Vue } from "vue-property-decorator";
 import { LOGIN_FORM } from "@/types/login/login";
 
-@Component
+@Component({
+  name: "Login",
+})
 export default class Login extends Vue {
   private loginForm: LOGIN_FORM = {
     username: "admin",
@@ -45,7 +47,7 @@ export default class Login extends Vue {
   };
 
   private handlerLogin(): void {
-    this.$refs["loginForm"].validate((valid) => {
+    this.$refs.loginForm.validate((valid: boolean) => {
       if (valid) {
         sessionStorage.setItem("username", this.loginForm.username);
         this.$router.push("/");

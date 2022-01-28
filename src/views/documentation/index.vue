@@ -5,7 +5,9 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-@Component
+@Component({
+  name: "Documentation",
+})
 export default class Documentation extends Vue {}
 </script>
 
