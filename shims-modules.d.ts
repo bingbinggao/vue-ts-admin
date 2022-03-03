@@ -17,5 +17,3 @@ declare module "path";
 declare module "js-cookie";
 
 declare module "*.json";
-
-declare module "vue-router";

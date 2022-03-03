@@ -39,6 +39,7 @@
   ],
   "files": [
     "shims-vue.d.ts",
-    "shims-modules.d.ts"
+    "shims-modules.d.ts",
+    "shims-tsx.d.ts"
   ]
 }

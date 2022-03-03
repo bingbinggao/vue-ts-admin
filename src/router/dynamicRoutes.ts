@@ -1,4 +1,5 @@
 import { RouteConfig } from "vue-router";
+import { RouteConfigPlus } from "@/types/route";
 
 /**
  * 示例
@@ -7,19 +8,19 @@ import { RouteConfig } from "vue-router";
  *     name: "xxx",
  *     meta: {
  *         icon: "xxxxxx",
- *         name: "xx"
+ *         title: "xx"
  *     },
  *     component: xxx
  * }
  */
 
-const DYNAMIC_ROUTES: Array<RouteConfig> = [
+const DYNAMIC_ROUTES: Array<RouteConfigPlus> = [
   {
     path: "/dashboard",
     name: "Dashboard",
     meta: {
       icon: "el-icon-s-home",
-      name: "首页",
+      title: "首页",
     },
     component: () => import("@/views/dashboard/index.vue"),
   },
@@ -28,7 +29,7 @@ const DYNAMIC_ROUTES: Array<RouteConfig> = [
     name: "documentation",
     meta: {
       icon: "el-icon-notebook-2",
-      name: "文档",
+      title: "文档",
     },
     component: () => import("@/views/documentation/index.vue"),
   },
@@ -37,7 +38,7 @@ const DYNAMIC_ROUTES: Array<RouteConfig> = [
     name: "Table",
     meta: {
       icon: "el-icon-s-home",
-      name: "表格",
+      title: "表格",
     },
     component: () => import("@/views/table/index.vue"),
   },
@@ -46,7 +47,7 @@ const DYNAMIC_ROUTES: Array<RouteConfig> = [
     name: "Error",
     meta: {
       icon: "el-icon-s-home",
-      name: "错误页",
+      title: "错误页",
     },
     component: () => import("@/views/error/index.vue"),
     children: [
@@ -55,7 +56,7 @@ const DYNAMIC_ROUTES: Array<RouteConfig> = [
         name: "401",
         meta: {
           icon: "",
-          name: "401",
+          title: "401",
         },
         component: () => import("@/views/error/401.vue"),
       },
@@ -64,7 +65,7 @@ const DYNAMIC_ROUTES: Array<RouteConfig> = [
         name: "404",
         meta: {
           icon: "",
-          name: "404",
+          title: "404",
         },
         component: () => import("@/views/error/404.vue"),
       },

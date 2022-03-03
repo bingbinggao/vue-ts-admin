@@ -4,14 +4,17 @@ import dynamicRoutes from "./dynamicRoutes";
 import Layout from "@/Layout/index.vue";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import { RouteConfigPlus } from "@/types/route";
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
+const routes: RouteConfigPlus[] = [
   {
     path: "/",
+    name: "dashboard",
     component: Layout,
     redirect: "/dashboard",
+    meta: { title: "Dashboard" },
     children: [...dynamicRoutes],
   },
   {
@@ -25,7 +28,6 @@ const router = new VueRouter({
   mode: "history",
   routes,
 });
-
 router.beforeEach((to: Route, from: Route, next: any) => {
   NProgress.start();
   console.log(sessionStorage.getItem("username"));

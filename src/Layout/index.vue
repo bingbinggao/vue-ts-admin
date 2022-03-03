@@ -14,7 +14,6 @@ import Navbar from "@/Layout/component/Navbar.vue";
 import AppMain from "@/Layout/component/AppMain.vue";
 import AppLeft from "@/Layout/component/navLeft/NavLeft.vue";
 @Component({
-  name: "Layout",
   components: { AppLeft, AppMain, Navbar },
 })
 export default class Layout extends Vue {}

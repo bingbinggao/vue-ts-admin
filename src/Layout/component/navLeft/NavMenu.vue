@@ -8,7 +8,7 @@
       >
         <template slot="title">
           <i :class="rou.meta.icon"></i>
-          <span>{{ rou.meta.name }}</span>
+          <span>{{ rou.meta.title }}</span>
         </template>
         <el-menu-item-group>
           <nav-menu :menuList="rou.children" />
@@ -22,7 +22,7 @@
         @click="handlerRouterPath(rou)"
       >
         <i :class="rou.meta.icon"></i>
-        <span slot="title">{{ rou.meta.name }}</span>
+        <span slot="title">{{ rou.meta.title }}</span>
       </el-menu-item>
     </template>
   </div>
@@ -30,18 +30,18 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { RouteConfig } from "vue-router";
+import { RouteConfigPlus } from "@/types/route";
 
 @Component
 export default class NavMenu extends Vue {
-  @Prop() public menuList!: Array<RouteConfig>;
+  @Prop() public menuList!: Array<RouteConfigPlus>;
 
   /**
    * @method 菜单路由跳转
    * @param rou 路由配置里面router数据
    * @private
    */
-  private handlerRouterPath(rou: RouteConfig) {
+  private handlerRouterPath(rou: RouteConfigPlus) {
     this.$router.push({ name: rou.name });
   }
 }
